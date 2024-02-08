@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <title>Info</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h2>Введенная информация:</h2>
+        <p>Имя: <span th:text="*{user.firstName}"></span></p>
+        <p>Фамилия: <span th:text="*{user.lastName}"></span></p>
+        <p>Email: <span th:text="*{user.email}"></span></p>
+        <a href="/start"><button>Вернуться</button></a>
+    </main>
+</body>
+</html>
