@@ -10,8 +10,8 @@
         <h2>Введите данные</h2>
         <form action="#" th:action="@{/start}" th:object="${user}" method="post">
             <label>Имя: <input type="text" th:field="*{firstName}" required placeholder="Иван"></label>
-            <label>Фамилия: <input type="text" th:field="*{lastName}" required placeholder="Беломестнов"></label>
-            <label>Email: <input type="email" th:field="*{email}" required placeholder="irbel@yandex.ru"></label>
+            <label>Фамилия: <input type="text" th:field="*{lastName}" required placeholder="Иванов"></label>
+            <label>Email: <input type="email" th:field="*{email}" required placeholder="iiivan@yandex.ru"></label>
             <button type="submit">Отправить</button>
         </form>
     </main>
