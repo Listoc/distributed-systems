@@ -8,9 +8,9 @@
 <body>
     <main>
         <h2>Введенная информация:</h2>
-        <p>Имя: <span th:text="*{user.firstName}"></span></p>
-        <p>Фамилия: <span th:text="*{user.lastName}"></span></p>
-        <p>Email: <span th:text="*{user.email}"></span></p>
+        <p>Имя: <span th:text="${user.firstName}"></span></p>
+        <p>Фамилия: <span th:text="${user.lastName}"></span></p>
+        <p>Email: <span th:text="${user.email}"></span></p>
         <a href="/start"><button>Вернуться</button></a>
     </main>
 </body>
