@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <title>Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <h2>Введенная информация:</h2>
+    <p>Целое число: <span th:text="${data.amount}"></span></p>
+    <p>Вещественное число: <span th:text="${data.rate}"></span></p>
+    <p>Результат: <span th:text="${data.result}"></span></p>
+    <a href="/"><button>Вернуться</button></a>
+</main>
+</body>
+</html>
