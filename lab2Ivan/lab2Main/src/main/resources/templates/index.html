@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <title>Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <h2>Введите данные</h2>
+    <form id="form" action="#" th:action="@{/start}" th:object="${userData}" method="post">
+        <label>Amount: <input id="amount" type="text" th:field="*{amount}" required placeholder="Иван"></label>
+        <label>Rate: <input id="rate" type="text" th:field="*{rate}" required placeholder="Иванов"></label>
+        <button type="submit">Отправить</button>
+    </form>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
