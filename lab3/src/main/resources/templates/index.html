@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/ui-lightness/jquery-ui.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.2/jquery-ui.min.js"></script>
+</head>
+<body>
+<main>
+    <h2>Введите данные</h2>
+    <form id="form" action="#" th:action="@{/start}" method="post">
+        <label>Лекарство: <input id="lang" type="text" name="tradeName"></label>
+        <button type="submit">Отправить</button>
+    </form>
+</main>
+<script th:inline="javascript">
+    $(function(){
+
+    var array = [[${drugs}]];
+    console.log(array);
+    $( "input" ).autocomplete({
+      source: array,
+      minLength: 2
+    });
+
+    $.ui.autocomplete.filter = function (array, term) {
+
+        var matcher = new RegExp("^" + $.ui.autocomplete.escapeRegex(term), "i");
+
+        return $.grep(array, function (value) {
+            return matcher.test(value.label || value.value || value);
+        });
+    };
+
+});
+</script>
+</body>
+</html>
