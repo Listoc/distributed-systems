@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <title>Info</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <h2>Пока нет данных!</h2>
+    <form action="#" th:action="@{/start}" th:object="${user}" method="post">
+        <button type="submit">Получить следующие данные</button>
+    </form>
+</main>
+</body>
+</html>
