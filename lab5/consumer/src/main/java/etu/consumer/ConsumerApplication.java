@@ -22,43 +22,4 @@ public class ConsumerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ConsumerApplication.class, args);
 	}
-
-	@Bean
-	public NewTopic topic() {
-		return TopicBuilder.name("topic2")
-				.partitions(1)
-				.replicas(1)
-				.build();
-	}
-
-	@Bean
-	public ConsumerFactory<String, User> consumerFactory() {
-		var deserializer = new JsonDeserializer<>(User.class);
-		deserializer.addTrustedPackages("etu.shared.model");
-		Map<String, Object> props = new HashMap<>();
-		props.put(
-				ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
-				"localhost:9092");
-		props.put(
-				ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
-				StringDeserializer.class);
-		props.put(
-				ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
-				JsonDeserializer.class);
-
-		return new DefaultKafkaConsumerFactory<>(
-				props,
-				new StringDeserializer(),
-				deserializer);
-	}
-
-	@Bean
-	public ConcurrentKafkaListenerContainerFactory<String, User>
-	kafkaListenerContainerFactory() {
-
-		ConcurrentKafkaListenerContainerFactory<String, User> factory =
-				new ConcurrentKafkaListenerContainerFactory<>();
-		factory.setConsumerFactory(consumerFactory());
-		return factory;
-	}
 }
